@@ -1,0 +1,70 @@
+bundle:
+  name: mlops-demo
+
+include:
+  - resources/*.yml
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://adb-6313129442315904.4.azuredatabricks.net/
+    variables:
+      catalog_name: mhiltner_dev
+      environment: dev
+    # Override permissions for dev environment
+    resources:
+      jobs:
+        data_ingestion_job:
+          permissions:
+            - level: "CAN_MANAGE"
+              group_name: "admins"
+        model_training_job:
+          permissions:
+            - level: "CAN_MANAGE"
+              group_name: "admins"
+        model_deployment_job:
+          permissions:
+            - level: "CAN_MANAGE"
+              group_name: "admins"
+        batch_inference_job:
+          permissions:
+            - level: "CAN_MANAGE"
+              group_name: "admins"
+
+  prod:
+    mode: production
+    workspace:
+      host: https://adb-6313129442315904.4.azuredatabricks.net/
+    variables:
+      catalog_name: mhiltner_prd
+      environment: prod
+    
+    # Override permissions for prod environment (only PowerUsers group)
+    resources:
+      jobs:
+        data_ingestion_job:
+          permissions:
+            - level: "CAN_MANAGE"
+              group_name: "admins"
+        model_training_job:
+          permissions:
+            - level: "CAN_MANAGE"
+              group_name: "admins"
+        model_deployment_job:
+          permissions:
+            - level: "CAN_MANAGE"
+              group_name: "admins"
+        batch_inference_job:
+          permissions:
+            - level: "CAN_MANAGE"
+              group_name: "admins"
+
+variables:
+  catalog_name:
+    description: "Name of the Unity Catalog to use"
+    default: "default_catalog"
+  environment:
+    description: "Environment name (dev/prod)"
+    default: "dev"
