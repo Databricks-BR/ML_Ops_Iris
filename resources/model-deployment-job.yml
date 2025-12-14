@@ -36,7 +36,7 @@ resources:
           
           # Notebook task
           notebook_task:
-            notebook_path: "./Notebooks/2_ModelTrainingAndDeployment/ModelDeployment/model-approval.ipynb"
+            notebook_path: "../Notebooks/2_ModelTrainingAndDeployment/ModelDeployment/model-approval.ipynb"
             base_parameters:
               model_name: "{{job.parameters.model_name}}"
               model_version: "{{job.parameters.model_version}}"
@@ -48,7 +48,7 @@ resources:
           
           # Notebook task
           notebook_task:
-            notebook_path: "./Notebooks/2_ModelTrainingAndDeployment/ModelDeployment/model-deployment.ipynb"
+            notebook_path: "../Notebooks/2_ModelTrainingAndDeployment/ModelDeployment/model-deployment.ipynb"
             base_parameters:
               model_name: "{{job.parameters.model_name}}"
               model_version: "{{job.parameters.model_version}}"
