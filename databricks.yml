@@ -19,19 +19,19 @@ targets:
         data_ingestion_job:
           permissions:
             - level: "CAN_MANAGE"
-              group_name: "admins"
+              group_name: "latam_field_eng_org"
         model_training_job:
           permissions:
             - level: "CAN_MANAGE"
-              group_name: "admins"
+              group_name: "latam_field_eng_org"
         model_deployment_job:
           permissions:
             - level: "CAN_MANAGE"
-              group_name: "admins"
+              group_name: "latam_field_eng_org"
         batch_inference_job:
           permissions:
             - level: "CAN_MANAGE"
-              group_name: "admins"
+              group_name: "latam_field_eng_org"
 
   prod:
     mode: production
@@ -47,19 +47,19 @@ targets:
         data_ingestion_job:
           permissions:
             - level: "CAN_MANAGE"
-              group_name: "admins"
+              group_name: "latam_field_eng_org"
         model_training_job:
           permissions:
             - level: "CAN_MANAGE"
-              group_name: "admins"
+              group_name: "latam_field_eng_org"
         model_deployment_job:
           permissions:
             - level: "CAN_MANAGE"
-              group_name: "admins"
+              group_name: "latam_field_eng_org"
         batch_inference_job:
           permissions:
             - level: "CAN_MANAGE"
-              group_name: "admins"
+              group_name: "latam_field_eng_org"
 
 variables:
   catalog_name:
