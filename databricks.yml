@@ -23,7 +23,7 @@ targets:
         model_training_job:
           permissions:
             - level: "CAN_MANAGE"
-              group_name: "latam_field_eng_org"
+              group_name: "admins"
         model_deployment_job:
           permissions:
             - level: "CAN_MANAGE"
